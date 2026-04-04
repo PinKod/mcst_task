@@ -4,4 +4,5 @@ project(task0)
 
 add_executable(${PROJECT_NAME}
     main.c
+    parse_arg.c
 )
