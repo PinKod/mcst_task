@@ -7,13 +7,13 @@
 
 uint32_t get_thread_num(int argc, char* argv[]) {
 	if(argc != 2) {
-		err_log("wrong usage, %s <num of threads - uint32_t>\n", argv[0]);
+		err_log("wrong usage, %s <num of threads - uint32_t>", argv[0]);
 		return 1;
 	}
 
 	const char* str = argv[1];
 	if(str == NULL || *str == '\0' || *str == '-') {
-		err_log("invalid arg. note: tread num cant be negative\n");
+		err_log("invalid arg. note: tread num cant be negative");
 		return 0;
 	}
 
@@ -21,7 +21,7 @@ uint32_t get_thread_num(int argc, char* argv[]) {
     errno = 0;
     const unsigned long val = strtoul(str, &endptr, 10);
 	if(endptr == str || errno == ERANGE || *endptr != '\0' || val > UINT32_MAX) {
-		err_log("invalid arg. error during num parsing\n");
+		err_log("invalid arg. error during num parsing");
 		return 0;
 	}
 	else {
